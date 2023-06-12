@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        apiURL: 'https://csswebscraperthreading-service-lvoso6lpvq-lz.a.run.app/get_computed_styles'
+        API_URL: 'https://csswebscraperthreading-service-lvoso6lpvq-lz.a.run.app/get_computed_styles'
     }
 }
 

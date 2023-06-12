@@ -21,7 +21,7 @@ export default function Home() {
   const getStyles = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${process.env.apiURL}`, {
+      const response = await fetch(`${process.env.API_URL}`, {
         method: 'POST',
         body: JSON.stringify({
           "url": url
