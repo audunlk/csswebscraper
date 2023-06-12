@@ -22,7 +22,10 @@ const LoadingText = () => {
     const interval = setInterval(() => {
       setIsVisible(false);
       setTimeout(() => {
-        setCurrentPhraseIndex(Math.floor(Math.random() * loadingPhrases.length));
+        setCurrentPhraseIndex((prevIndex) => {
+          const newIndex = Math.floor(Math.random() * loadingPhrases.length);
+          return newIndex !== prevIndex ? newIndex : (newIndex + 1) % loadingPhrases.length;
+        });
         setIsVisible(true);
       }, 500);
     }, 4000);
@@ -30,7 +33,7 @@ const LoadingText = () => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [loadingPhrases.length]);
 
   return (
     <div>
