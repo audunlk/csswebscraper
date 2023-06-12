@@ -1,15 +1,22 @@
 import React from 'react'
+import { AiOutlineClose } from 'react-icons/ai';
+import Link from 'next/link';
 
 export default function page() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-center gap-2 px-24
         max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:p-4 max-sm:mt-8
         ">
+            <Link href="/">
+                <AiOutlineClose className="
+          absolute top-0 right-0 m-4
+          text-xl text-gray-500 mb-4" />
+            </Link>
             <h1 className="text-4xl font-bold text-center ">
                 Welcome to ScanMyDesign.com
             </h1>
             <h4 className="text-xl mb-4 text-center ">
-            Discover the Colors and Fonts of Any Website
+                Discover the Colors and Fonts of Any Website
             </h4>
             <div className='flex flex-col border-2 border-black rounded-lg p-8
              items-center justify-center gap-4 max-sm:flex-col max-sm:items-center max-sm:justify-center'
