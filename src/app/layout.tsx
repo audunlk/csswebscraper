@@ -1,13 +1,12 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Head from 'next/head'
-import Script from 'next/script'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Get Styles',
+  title: 'Analyze the styles of any website - Scan My Design',
   description: 'Find the styles, colors and fonts of any website',
 }
 

@@ -7,6 +7,8 @@ import Lottie from 'lottie-react'
 import lottieloading from './assets/lottieloading.json'
 import LoadingText from './components/LoadingText';
 import { inputErrorMessage } from './utils/InputErrorMessage';
+import { FaQuestionCircle } from 'react-icons/fa';
+import Link from 'next/link';
 
 
 
@@ -63,10 +65,8 @@ export default function Home() {
 
   if (data) {
     return (
-
       <div className="flex flex-col items-center justify-center  p-4 
       ">
-       
         <h3 className="text-2xl font-bold mb-4 text-center">Here's what we found!</h3>
         <h4 className="text-lg font-medium text-center">
           Most common colors and fonts used on
@@ -80,8 +80,8 @@ export default function Home() {
             onClick={() => [setData(null), setLoading(false), setError(false)]}
           />
         </div>
-        <Grid 
-        data={data}
+        <Grid
+          data={data}
         />
       </div>
     )
@@ -106,7 +106,14 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <Link href="/about">
+          <FaQuestionCircle className="
+          absolute top-0 right-0 m-4
+          text-xl text-gray-500 mb-4" />
+        </Link>
       <div>
+        
+
         <h1 className="text-4xl font-bold mb-4 text-center">Scan your website!</h1>
         <h4 className="text-lg font-medium mb-6 text-center">
           Enter a website URL to get a list of the common colors and fonts used on
@@ -133,9 +140,9 @@ export default function Home() {
           </p>
         )}
       </div>
-        {inputError && (
-          inputErrorMessage()
-        )}
+      {inputError && (
+        inputErrorMessage()
+      )}
     </main>
   );
 }
