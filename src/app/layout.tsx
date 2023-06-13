@@ -1,6 +1,5 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { Head, Html, NextScript, Main } from 'next/document'
 import Script from 'next/script'
 
 
@@ -21,12 +20,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <Head>
-        <Script async 
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2391523060127866"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"/> 
-      </Head>  */}
       <body className={inter.className}>
 
         <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-r from-red-500 via-orange-400 to-yellow-500 -z-10 opacity-80
