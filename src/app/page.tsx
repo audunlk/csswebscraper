@@ -15,7 +15,7 @@ import Link from 'next/link';
 
 export default function Home() {
   const [url, setUrl] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [data, setData] = useState(null);
   const [inputError, setInputError] = useState(false);
@@ -69,9 +69,9 @@ export default function Home() {
     return (
       <div className="flex flex-col items-center justify-center  p-4 
       ">
-        <h3 className="text-2xl font-bold text-center">Here's what we found!</h3>
+        <h3 className="text-3xl font-bold text-center mt-2">Here's what we found!</h3>
         <h4 className="text-lg font-medium text-center">
-          Most common colors and fonts used on
+          Colors and fonts used on
         </h4>
         <p className="text-center max-w-md
         text-lg font-bold mb-2 whitespace-nowrap overflow-hidden overflow-ellipsis">{url}</p>
@@ -91,10 +91,12 @@ export default function Home() {
 
   if (loading) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <main 
+      style={{minHeight: 'calc(100vh - env(safe-area-inset-bottom))'}}
+      className="flex  flex-col items-center justify-center px-10">
         <Lottie
           animationData={lottieloading}
-          style={{ width: 400, height: 400 }}
+          style={{ width: 500, height: 500, position: 'relative', top: 0, left: 0 }}
         />
         <LoadingText />
         <Button
@@ -107,7 +109,9 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main 
+    style={{minHeight: 'calc(100vh - env(safe-area-inset-bottom))'}}
+    className="flex flex-col items-center justify-center p-24">
       <Link href="/about">
           <FaQuestionCircle className="
           absolute top-0 right-0 m-4

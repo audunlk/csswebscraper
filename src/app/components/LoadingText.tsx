@@ -37,7 +37,7 @@ const LoadingText = () => {
 
   return (
     <div>
-      <p className={`text-sm font-medium text-center mb-6 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <p className={`text-lg font-medium text-center mb-6 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         {loadingPhrases[currentPhraseIndex]}
       </p>
     </div>

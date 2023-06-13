@@ -1,6 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
+import GoogleAnalytics from './components/GoogleAnalytics';
+
 
 
 
@@ -22,10 +24,12 @@ export default function RootLayout({
     <html lang="en">
      
       
-         
+     {/* <GoogleAnalytics GA_MEASUREMENT_ID='G-0000000000'/> */}
       <body className={inter.className}>
 
-        <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-r from-red-500 via-orange-400 to-yellow-500 -z-10 opacity-80
+        <div 
+        
+        className="fixed top-0 left-0 min-w-full min-h-full bg-gradient-to-r from-red-400 via-orange-400 to-yellow-500 -z-10 
       "></div>
         {children}
         <Script async
