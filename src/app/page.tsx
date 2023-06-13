@@ -28,7 +28,7 @@ export default function Home() {
       const response = await fetch(`${process.env.API_URL}`, {
         method: 'POST',
         body: JSON.stringify({
-          "url": finalUrl.toLocaleLowerCase()
+          "url": finalUrl
         }),
         headers: {
           'Content-Type': 'application/json',

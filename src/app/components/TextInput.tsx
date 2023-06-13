@@ -42,6 +42,7 @@ const TextInput = ({  placeholder, value, onChange, setInputError }: TextInputPr
         onChange={onChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        autoCapitalize='none'
       />
     </div>
   );
