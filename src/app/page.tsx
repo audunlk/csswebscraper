@@ -119,9 +119,12 @@ export default function Home() {
         </Link>
       <div>
         <h1 className="text-4xl font-bold mb-4 text-center">Scan your website!</h1>
-        <h4 className="text-lg font-medium mb-6 text-center">
+        <h4 className="text-lg font-medium mb-2 text-center">
           Enter a website URL to get a list of the common colors and fonts used on
-          the site {"(beta)"}.
+          the site. 
+        </h4>
+        <h4 className="text-base font-medium mb-6 text-center">
+          {"(beta)"}
         </h4>
         <div className='flex flex-row items-center justify-center gap-3
          max-sm:flex-col max-sm:items-center max-sm:justify-center
