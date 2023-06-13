@@ -139,7 +139,7 @@ export default function Home() {
           />
         </div>
         {error && (
-          <p className="mt-4 text-sm text-red-500 text-center">
+          <p className="mt-4 text-sm text-red-100 text-center">
             There was an error scanning the website. Please try again.
           </p>
         )}
