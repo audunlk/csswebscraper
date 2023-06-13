@@ -22,11 +22,13 @@ export default function Home() {
 
   const getStyles = async () => {
     setLoading(true);
+    let finalUrl = url
+    url.trim().includes("http") ? finalUrl = url : finalUrl = `https://${url}`    
     try {
       const response = await fetch(`${process.env.API_URL}`, {
         method: 'POST',
         body: JSON.stringify({
-          "url": url
+          "url": finalUrl
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +69,7 @@ export default function Home() {
     return (
       <div className="flex flex-col items-center justify-center  p-4 
       ">
-        <h3 className="text-2xl font-bold mb-4 text-center">Here's what we found!</h3>
+        <h3 className="text-2xl font-bold text-center">Here's what we found!</h3>
         <h4 className="text-lg font-medium text-center">
           Most common colors and fonts used on
         </h4>
@@ -109,11 +111,9 @@ export default function Home() {
       <Link href="/about">
           <FaQuestionCircle className="
           absolute top-0 right-0 m-4
-          text-xl text-gray-500 mb-4" />
+          text-xl text-white mb-4" />
         </Link>
       <div>
-        
-
         <h1 className="text-4xl font-bold mb-4 text-center">Scan your website!</h1>
         <h4 className="text-lg font-medium mb-6 text-center">
           Enter a website URL to get a list of the common colors and fonts used on

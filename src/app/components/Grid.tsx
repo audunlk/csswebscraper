@@ -33,7 +33,7 @@ const Grid: React.FC<GridProps> = ({ data }) => {
         <Switch
           checked={enabled}
           onChange={setEnabled}
-          className={`${enabled ? 'bg-blue-600' : 'bg-gray-600'
+          className={`${enabled ? 'bg-blue-800' : 'bg-gray-600'
             } relative inline-flex items-center h-6 rounded-full w-11`}
         >
           <span className="sr-only">Enable Color Translation</span>
@@ -50,7 +50,7 @@ const Grid: React.FC<GridProps> = ({ data }) => {
       ">
         {Object.entries(data).map(([title, items], i) => (
           <div key={title} className="flex flex-col w-full">
-            <h2 className="text-lg font-bold mb-2">{title}</h2>
+            <h2 className="text-lg font-bold mb-2 text-black">{title}</h2>
             <div className="grid gap-2">
               {items.map((item: Item) => (
                 <div
@@ -62,7 +62,7 @@ const Grid: React.FC<GridProps> = ({ data }) => {
                       : undefined}>
                   {item.value.includes('rgb') &&  (
                     <p
-                    className="text-center text-sm font-medium mb-2"
+                    className="text-center text-sm font-medium mb-2 text-black"
                     style={{ backgroundColor: 'white', borderRadius: '5px', padding: '5px', borderWidth: '1px', borderColor: 'grey'}}
                   >
                     {item.value.includes('rgb') && !enabled ? item.value : null}
@@ -72,7 +72,7 @@ const Grid: React.FC<GridProps> = ({ data }) => {
                   </p>
                   ) }
                   {!item.value.includes('rgb') && (
-                    <p className="text-center text-sm font-medium mb-2"
+                    <p className="text-center text-sm font-medium mb-2 text-black"
                     
                     >
                       {item.value.includes('rgb') ? null : item.value}

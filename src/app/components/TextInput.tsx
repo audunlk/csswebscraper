@@ -8,7 +8,8 @@ interface TextInputProps {
 }
 
 const TextInput = ({  placeholder, value, onChange, setInputError }: TextInputProps) => {
-  const urlRegex: RegExp = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
+  const urlRegex: RegExp = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$|^[^\s/$.?#]+\.[^\s/$.?#]+$/;
+
   const isValidUrl: boolean = urlRegex.test(value);
 
   const [isFocused, setIsFocused] = useState(false);
@@ -36,6 +37,7 @@ const TextInput = ({  placeholder, value, onChange, setInputError }: TextInputPr
           "px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"}
         type="text"
         placeholder={placeholder}
+        style={{color: "black"}}
         value={value}
         onChange={onChange}
         onFocus={handleFocus}

@@ -1,6 +1,8 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
 import Link from 'next/link';
+// github icon
+import { FaGithub } from 'react-icons/fa';
 
 export default function page() {
     return (
@@ -9,16 +11,24 @@ export default function page() {
         ">
             <Link href="/">
                 <AiOutlineClose className="
-          absolute top-0 right-0 m-4
-          text-xl text-gray-500 mb-4" />
+                    absolute top-0 right-0 m-4
+                    text-2xl text-white mb-4" 
+                />
             </Link>
             <h1 className="text-4xl font-bold text-center ">
                 Welcome to ScanMyDesign.com
             </h1>
-            <h4 className="text-xl mb-4 text-center ">
+            <h4 className="text-xl mb-4 text-center">
                 Discover the Colors and Fonts of Any Website
             </h4>
-            <div className='flex flex-col border-2 border-black rounded-lg p-8
+            <Link
+                href="https://github.com/audunlk"
+                target='_blank'
+            >
+                <FaGithub className=" m-4
+                text-3xl text-white mb-4" />
+            </Link>
+            <div className='flex flex-col border-2 rounded-lg p-8 bg-white text-black
              items-center justify-center gap-4 max-sm:flex-col max-sm:items-center max-sm:justify-center'
             >
                 <p className="">
