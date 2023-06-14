@@ -23,7 +23,7 @@ export default function Home() {
   const getStyles = async () => {
     setLoading(true);
     let finalUrl = url
-    url.trim().includes("http") ? finalUrl = url : finalUrl = `https://${url}`    
+    url.trim().includes("http") ? finalUrl = url : finalUrl = `https://${url}`
     try {
       const response = await fetch(`${process.env.API_URL}`, {
         method: 'POST',
@@ -52,13 +52,6 @@ export default function Home() {
       setLoading(false);
     }
   };
-
-
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [data]);
 
   const handleButtonClick = async () => {
     setLoading(true);
@@ -91,9 +84,9 @@ export default function Home() {
 
   if (loading) {
     return (
-      <main 
-      style={{minHeight: 'calc(100vh - env(safe-area-inset-bottom))'}}
-      className="flex  flex-col items-center justify-center px-10">
+      <main
+        style={{ minHeight: 'calc(100vh - env(safe-area-inset-bottom))' }}
+        className="flex  flex-col items-center justify-center px-10">
         <Lottie
           animationData={lottieloading}
           style={{ width: 500, height: 500, position: 'relative', top: 0, left: 0 }}
@@ -109,23 +102,25 @@ export default function Home() {
   }
 
   return (
-    <main 
-    style={{minHeight: 'calc(100vh - env(safe-area-inset-bottom))'}}
-    className="flex flex-col items-center justify-center p-24">
+    <main
+      style={{ minHeight: 'calc(100vh - env(safe-area-inset-bottom))' }}
+      className="flex flex-col items-center justify-center p-24">
       <Link href="/about">
-          <FaQuestionCircle className="
+        <FaQuestionCircle className="
           absolute top-0 right-0 m-4
           text-xl text-white mb-4" />
-        </Link>
+      </Link>
+      <h4 className="absolute top-0 left-0 m-4 text-l font-sm text-center text-blue-800">
+            {"(beta)"}
+        </h4>
       <div>
-        <h1 className="text-4xl font-bold mb-4 text-center">Scan your website!</h1>
-        <h4 className="text-lg font-medium mb-2 text-center">
+        
+          <h1 className="text-4xl font-bold mb-2 text-center">Scan your website!</h1>
+        <h4 className="text-lg mb-4  font-medium text-center">
           Enter a website URL to get a list of the common colors and fonts used on
-          the site. 
+          the site.
         </h4>
-        <h4 className="text-base font-medium mb-6 text-center">
-          {"(beta)"}
-        </h4>
+        
         <div className='flex flex-row items-center justify-center gap-3
          max-sm:flex-col max-sm:items-center max-sm:justify-center
         '>
@@ -142,9 +137,15 @@ export default function Home() {
           />
         </div>
         {error && (
-          <p className="mt-4 text-sm text-red-100 text-center">
-            There was an error scanning the website. Please try again.
-          </p>
+          <div>
+            <p className="mt-4 text-base font-bold
+             text-white text-center">
+              Couldn't scan this website at this moment😔
+            </p>
+            <p className=" text-sm text-red-100 text-center">
+             Try a different website!
+            </p>
+          </div>
         )}
       </div>
       {inputError && (
