@@ -115,10 +115,17 @@ export default function Home() {
         </h4>
       <div>
         
-          <h1 className="text-4xl font-bold mb-2 text-center">Scan your website!</h1>
-        <h4 className="text-lg mb-4  font-medium text-center">
-          Enter a website URL to get a list of the common colors and fonts used on
+          <h1 className="text-6xl font-bold mb-2 text-center">Scan your design!</h1>
+        <h4 className="text-lg mb-2  font-medium text-center">
+          Enter a
+          <span className="text-blue-800">
+          {" "} website URL{" "}
+          </span>
+           to get a list of the common colors and fonts used on
           the site.
+        </h4>
+        <h4 className="text-xs mb-4  font-medium text-center">
+          *Some websites may not be supported due to cors restriction.
         </h4>
         
         <div className='flex flex-row items-center justify-center gap-3

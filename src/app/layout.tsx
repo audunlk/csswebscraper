@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import GoogleAnalytics from './components/GoogleAnalytics';
+// import GoogleAdBanner from './components/GoogleAdBanner';
 import CookieBanner from './components/CookieBanner';
 
 
@@ -22,14 +23,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-     
-      
-      <GoogleAnalytics GA_MEASUREMENT_ID='G-5Z6BWD7G0G'/> 
+      <GoogleAnalytics GA_MEASUREMENT_ID='G-5Z6BWD7G0G'/>
       <body className={inter.className}>
         <div className="fixed top-0 left-0 min-w-full min-h-full bg-gradient-to-r from-red-400 via-orange-400 to-yellow-500 -z-10 
       "></div>
         {children}
         <CookieBanner/>
+        {/* <GoogleAdBanner/> */}
         <Script async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2391523060127866"
           strategy="beforeInteractive"
