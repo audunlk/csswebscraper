@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link';
 import { getLocalStorage, setLocalStorage } from '../lib/StorageHelper';
 import { useState, useEffect } from 'react';
