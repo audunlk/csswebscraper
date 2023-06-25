@@ -110,9 +110,6 @@ export default function Home() {
           absolute top-0 right-0 m-4
           text-xl text-white mb-4" />
       </Link>
-      <h4 className="absolute top-0 left-0 m-4 text-l font-sm text-center text-blue-800">
-            {"(beta)"}
-        </h4>
       <div>
         
           <h1 className="text-6xl font-bold mb-2 text-center">Scan your design!</h1>
